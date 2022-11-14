@@ -35,9 +35,9 @@ and copy the contents of this package into their corresponding folders in `CMSSW
 
 ```
 cp -f <path to your SexaqSim package>/IOMC/Input/test/* IOMC/Input/test/.
-cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/data/* CustomPhysics/data/.
-cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/interface/* CustomPhysics/interface/.
-cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/src/* CustomPhysics/src/.
+cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/data/* SimG4Core/CustomPhysics/data/.
+cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/interface/* SimG4Core/CustomPhysics/interface/.
+cp -f <path to your SexaqSim package>/SimG4Core/CustomPhysics/src/* SimG4Core/CustomPhysics/src/.
 cp -f <path to your SexaqSim package>/runGENSIM_Sexaq_withCuts/crab/* runGENSIM_Sexaq_withCuts/crab/.
 ```
 

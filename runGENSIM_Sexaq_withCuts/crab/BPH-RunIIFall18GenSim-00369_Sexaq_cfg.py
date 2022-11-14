@@ -4,14 +4,14 @@
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
 # with command line options: Configuration/GenProduction/python/BPH-RunIIFall18GS-00369-fragment.py --python_filename BPH-RunIIFall18GS-00369_1_cfg.py --eventcontent RAWSIM --datatier GEN-SIM --fileout file:BPH-RunIIFall18GS-00369.root --conditions 102X_upgrade2018_realistic_v11 --beamspot Realistic25ns13TeVEarly2018Collision --step GEN,SIM --geometry DB:Extended --era Run2_2018 --no_exec --mc -n 1000
 import FWCore.ParameterSet.Config as cms
-options.outputFile = 'file:BPH-RunIIFall18GS-00369.root'
-options.inputFiles = 'root://cmsxrootd.hep.wisc.edu//store/user/wvetens/crmc_Sexaq/crmc/Sexaquark_13TeV_trial_4_1p8GeV/0/crmc_Sexaq_1.root'
-options.maxEvents= 4000
 from Configuration.StandardSequences.Eras import eras
 from FWCore.ParameterSet.VarParsing import VarParsing
 
 process = cms.Process('SIM',eras.Run2_2018)
 options = VarParsing ('analysis')
+options.outputFile = 'file:BPH-RunIIFall18GS-00369.root'
+options.inputFiles = 'root://cmsxrootd.hep.wisc.edu//store/user/wvetens/crmc_Sexaq/crmc/Sexaquark_13TeV_trial_4_1p8GeV/0/crmc_Sexaq_1.root'
+options.maxEvents= 4000
 options.parseArguments()
 
 # import of standard configurations
