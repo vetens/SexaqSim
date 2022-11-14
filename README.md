@@ -1,3 +1,4 @@
+# SexaqSim
 ## Setup
 
 This repository is meant to be used with CMSSW - the files herein should be copied into a separate directory with CMSSW 10_2_26 installed.
