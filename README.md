@@ -2,12 +2,10 @@
 ## Setup
 
 This repository is meant to be used with CMSSW - the files herein should be copied into a separate directory with CMSSW 10_2_26 installed.
-I would recommend having it in a separate directory from this one, i.e. inside this cloned repository do:
 
-```
-cd ../
-```
-before the next step (which will automatically make a CMSSW directory).
+To clone this repository, do ``git clone https://github.com/vetens/SexaqSim.git``
+
+I would recommend having it in a separate directory from this CMSSW, i.e. outside this directory you will set up CMSSW, and then copy these contents into the CMSSW directory
 
 To set up the proper CMSSW environment - on a cluster which has CMSSW
 installed, do:
