@@ -78,3 +78,37 @@ Config file for CRAB jobs is `runGENSIM_Sexaq_withCuts/crab/crabConfig_MC_SIM_st
 crab submit crabConfig_MC_SIM_step_withBash_test_with_publication.py
 ```
 
+## DIGIRECO step
+
+Clone my analysis code in the same `CMSSW_10_2_26/src` area as above:
+
+```
+git clone https://github.com/vetens/SexaQAnalysis.git
+```
+
+Make sure you are on the `master` branch with `SexaQAnalysis` by running:
+
+```
+cd SexaQAnalysis/
+git checkout master
+cd ../
+```
+
+ and again run,
+
+```
+scram b -j 8
+cmsenv
+```
+
+To build the new packages. 
+
+Copy over ``runDIGIREKOSKIM_Sexaq_withCuts/crab`` and all its contents as with the GENSIM step. Just as with GENSIM, use the ``BPH-RunII<stuff>_cfg.py`` to run locally and the ``crabConfig<stuff>.py`` to run with CRAB. The reconstruction takes a VERY LONG TIME, so there is also a scaffolding for condor scripts to run your test job remotely. Just update  `condor_test.cfg` and `Test.sh` with your own environment and proxy info and submit with:
+
+```
+condor_submit condor_test.cfg
+```
+
+## NTuple Production
+
+NTuple production macros are all in the `SexaQAnalysis` module, with the `cmsRun` configs in `AnalyzerAllSteps/test` and the plotting macros in `AnalyzerAllSteps/macros`.
