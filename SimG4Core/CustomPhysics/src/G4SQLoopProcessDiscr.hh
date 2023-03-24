@@ -17,8 +17,9 @@ class G4SQLoopProcessDiscr : public G4VDiscreteProcess {
 
   public:
 
-    G4SQLoopProcessDiscr(const G4String& name = "SQLooper",
-                          G4ProcessType type = fUserDefined);
+    G4SQLoopProcessDiscr(double mass,
+                         const G4String& name = "SQLooper",
+                         G4ProcessType type = fUserDefined);
     virtual ~G4SQLoopProcessDiscr();
 
 
@@ -38,6 +39,7 @@ class G4SQLoopProcessDiscr : public G4VDiscreteProcess {
 
     //G4ParticleChangeForTransport* fParticleChange;
     G4ParticleChange* fParticleChange;
+    double GenMass;
   
   private:
  

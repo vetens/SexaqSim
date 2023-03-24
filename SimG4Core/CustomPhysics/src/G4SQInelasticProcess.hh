@@ -54,7 +54,7 @@ class G4SQInelasticProcess : public G4HadronicProcess
 
  public:
 
-  G4SQInelasticProcess(const G4String& processName="SQInelastic");
+  G4SQInelasticProcess(double mass, const G4String& processName="SQInelastic");
 
   virtual ~G4SQInelasticProcess();
 

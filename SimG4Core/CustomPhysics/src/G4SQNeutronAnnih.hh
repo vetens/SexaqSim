@@ -55,7 +55,7 @@ class G4SQNeutronAnnih : public G4HadronicInteraction {
 
   public:
 
-    G4SQNeutronAnnih();
+    G4SQNeutronAnnih(double mass);
 
     virtual ~G4SQNeutronAnnih();
 

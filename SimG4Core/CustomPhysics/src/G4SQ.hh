@@ -57,8 +57,8 @@ class G4SQ : public G4ParticleDefinition {
 
   public:
     static G4SQ* Definition(double mass);
-    static G4SQ* SQDefinition(double mass);
-    static G4SQ* SQ();
+//    static G4SQ* SQDefinition(double mass);
+    static G4SQ* SQ(double mass);
 
 };
 

@@ -57,8 +57,8 @@ class G4AntiSQ : public G4ParticleDefinition {
 
   public:
     static G4AntiSQ* Definition(double mass);
-    static G4AntiSQ* AntiSQDefinition(double mass);
-    static G4AntiSQ* AntiSQ();
+    //static G4AntiSQ* AntiSQDefinition(double mass);
+    static G4AntiSQ* AntiSQ(double mass);
 
 };
 

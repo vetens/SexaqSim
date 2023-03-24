@@ -51,7 +51,7 @@ class G4SQInelasticCrossSection : public G4VCrossSectionDataSet
 {
 public:
 
-  G4SQInelasticCrossSection();
+  G4SQInelasticCrossSection(double mass);
 
   ~G4SQInelasticCrossSection();
 

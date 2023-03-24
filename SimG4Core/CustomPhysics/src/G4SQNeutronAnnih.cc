@@ -50,12 +50,12 @@
 #include "G4NucleiProperties.hh"
 //Jarne-end
 
-G4SQNeutronAnnih::G4SQNeutronAnnih() : G4HadronicInteraction("SexaQuark-neutron annihilation")
+G4SQNeutronAnnih::G4SQNeutronAnnih(double mass) : G4HadronicInteraction("SexaQuark-neutron annihilation")
 {
   SetMinEnergy( 0.0*GeV );
   SetMaxEnergy( 100.*TeV );
 
-  theSQ    = G4SQ::SQ();
+  theSQ    = G4SQ::SQ(mass);
   theK0S   = G4KaonZeroShort::KaonZeroShort();
   theAntiL = G4AntiLambda::AntiLambda();
   theProton = G4Proton::Proton();//proton only used when the particle which the sexaquark hits is a deutereon and the neutron dissapears, so what stays behind is a proton

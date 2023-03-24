@@ -83,14 +83,14 @@ G4SQ* G4SQ::Definition(double mass)
   return theInstance;
 }
 
-G4SQ* G4SQ::SQDefinition(double mass)
-{ 
-  return Definition(mass);
-}
+//G4SQ* G4SQ::SQDefinition(double mass)
+//{ 
+//  return Definition(mass);
+//}
 
-G4SQ*  G4SQ::SQ()
+G4SQ*  G4SQ::SQ(double mass)
 { 
-  return Definition(1.8*GeV); // will use correct mass if instance exists
+  return Definition(mass * GeV); // will use correct mass if instance exists
 }
 
 

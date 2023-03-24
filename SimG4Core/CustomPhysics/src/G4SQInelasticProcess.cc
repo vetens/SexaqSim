@@ -63,7 +63,7 @@ static const char* G4Hadronic_Random_File = getenv("G4HADRONIC_RANDOM_FILE");
 static const G4int resetprescale = 100;
 
 //////////////////////////////////////////////////////////////////
-G4SQInelasticProcess::G4SQInelasticProcess(const G4String& processName)
+G4SQInelasticProcess::G4SQInelasticProcess(double mass, const G4String& processName)
  : G4HadronicProcess(processName, fHadronic)
 {
   SetProcessSubType(fHadronInelastic);	// Default unless subclass changes
@@ -80,7 +80,7 @@ G4SQInelasticProcess::G4SQInelasticProcess(const G4String& processName)
   GetEnergyMomentumCheckEnvvars();
 
   AddDataSet(new G4HadronInelasticDataSet());
-  theParticle = G4SQ::SQ();
+  theParticle = G4SQ::SQ(mass);
 
 }
 

@@ -5,11 +5,12 @@
 #include "G4VParticleChange.hh"
 
 
-G4SQLoopProcessDiscr::G4SQLoopProcessDiscr(const G4String& name, G4ProcessType type)
+G4SQLoopProcessDiscr::G4SQLoopProcessDiscr(double mass, const G4String& name, G4ProcessType type)
   : G4VDiscreteProcess(name, type)
 {
   fParticleChange = new G4ParticleChange();
   fParticleChange->ClearDebugFlag();
+  GenMass = mass;
 }
 
 
@@ -30,7 +31,7 @@ G4VParticleChange* G4SQLoopProcessDiscr::PostStepDoIt(const G4Track& track, cons
 
   //adding secondary antiS
   fParticleChange->SetNumberOfSecondaries(1); 
-  G4DynamicParticle* replacementParticle= new G4DynamicParticle(G4AntiSQ::AntiSQ(), track.GetMomentumDirection(), track.GetKineticEnergy());
+  G4DynamicParticle* replacementParticle= new G4DynamicParticle(G4AntiSQ::AntiSQ(GenMass), track.GetMomentumDirection(), track.GetKineticEnergy());
   fParticleChange->AddSecondary(replacementParticle,globaltimeini);
 
   //killing original AntiS

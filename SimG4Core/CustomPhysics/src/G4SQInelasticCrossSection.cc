@@ -39,12 +39,12 @@
 #include "G4NistManager.hh"
 
 
-G4SQInelasticCrossSection::G4SQInelasticCrossSection()
+G4SQInelasticCrossSection::G4SQInelasticCrossSection(double mass)
   : G4VCrossSectionDataSet("SQ-neutron")
 {
   nist = G4NistManager::Instance();
-  theSQ = G4SQ::SQ();
-  theAntiSQ = G4AntiSQ::AntiSQ();
+  theSQ = G4SQ::SQ(mass);
+  theAntiSQ = G4AntiSQ::AntiSQ(mass);
 }
 
 

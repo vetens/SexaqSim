@@ -80,16 +80,16 @@ std::cout << "=-= SL sexaq FTW! =-= "
           << particle->GetParticleName() << std::endl;
 
       if(pmanager) { //this is an important bit for the Sexaquark. Here the different interactions get defined
-        G4SQInelasticProcess * sqInelPr = new G4SQInelasticProcess();
-	G4SQNeutronAnnih * sqModel = new G4SQNeutronAnnih();
+        G4SQInelasticProcess * sqInelPr = new G4SQInelasticProcess(particle->GetPDGMass()/GeV);
+	G4SQNeutronAnnih * sqModel = new G4SQNeutronAnnih(particle->GetPDGMass()/GeV);
 	sqInelPr->RegisterMe(sqModel);
-	G4SQInelasticCrossSection * sqInelXS = new G4SQInelasticCrossSection();
+	G4SQInelasticCrossSection * sqInelXS = new G4SQInelasticCrossSection(particle->GetPDGMass()/GeV);
 	sqInelPr->AddDataSet(sqInelXS);
         pmanager->AddDiscreteProcess(sqInelPr);
 
 	G4SQLoopProcess * sqLoopPr = new G4SQLoopProcess();
 	pmanager->AddContinuousProcess(sqLoopPr);
-	G4SQLoopProcessDiscr * sqLoopPrDiscr = new G4SQLoopProcessDiscr();
+	G4SQLoopProcessDiscr * sqLoopPrDiscr = new G4SQLoopProcessDiscr(particle->GetPDGMass()/GeV);
 	pmanager->AddDiscreteProcess(sqLoopPrDiscr);
       }
       else  {edm::LogInfo("CustomPhysics") << "   No pmanager";}
